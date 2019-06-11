@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout.VERTICAL
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.model.Produto
+import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
 import br.com.alura.aluraesporte.ui.recyclerview.adapter.ProdutosAdapter
 import br.com.alura.aluraesporte.ui.viewmodel.ProdutosViewModel
 import kotlinx.android.synthetic.main.lista_produtos.*
@@ -54,7 +56,12 @@ class ListaProdutosFragment : Fragment() {
     private fun configuraRecyclerView() {
         val divisor = DividerItemDecoration(context, VERTICAL)
         lista_produtos_recyclerview.addItemDecoration(divisor)
-        adapter.onItemClickListener = quandoProdutoSelecionado
+        adapter.onItemClickListener = { produtoSelecionado ->
+            val controlador = findNavController()
+            val dados = Bundle()
+            dados.putLong(CHAVE_PRODUTO_ID, produtoSelecionado.id)
+            controlador.navigate(R.id.detalhesProduto, dados)
+        }
         lista_produtos_recyclerview.adapter = adapter
     }
 

@@ -14,4 +14,8 @@
         android:name="br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment"
         android:label="Detalhes do produto"
         tools:layout="@layout/detalhes_produto" />
+    <fragment android:id="@+id/pagamento"
+        android:label="Pagamento"
+        android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
+        tools:layout="@layout/pagamento"/>
 </navigation>
