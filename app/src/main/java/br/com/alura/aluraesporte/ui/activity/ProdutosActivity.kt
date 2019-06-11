@@ -11,8 +11,6 @@ import br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment
 import br.com.alura.aluraesporte.ui.fragment.PagamentoFragment
 import org.koin.android.ext.android.inject
 
-private const val COMPRA_REALIZADA = "Compra realizada"
-
 class ProdutosActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
