@@ -28,6 +28,7 @@
         tools:layout="@layout/pagamento">
         <action
             android:id="@+id/acao_pagamento_para_listaProduto"
-            app:destination="@id/listaProdutos" />
+            app:destination="@id/listaProdutos"
+            app:popUpTo="@+id/nav_graph" />
     </fragment>
 </navigation>
